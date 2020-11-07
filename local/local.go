@@ -17,10 +17,6 @@ const (
 // Kind is the kind of Location this package provides.
 const Kind = "local"
 
-const (
-	paramTypeValue = "item"
-)
-
 func init() {
 	validatefn := func(config stow.Config) error {
 		_, ok := config.Config(ConfigKeyPath)

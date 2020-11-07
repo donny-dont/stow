@@ -16,7 +16,6 @@ type item struct {
 	container  *container
 	client     *az.BlobStorageClient
 	properties az.BlobProperties
-	url        url.URL
 	metadata   map[string]interface{}
 	infoOnce   sync.Once
 	infoErr    error
@@ -87,14 +86,6 @@ func (i *item) ensureInfo() error {
 	}
 
 	return i.infoErr
-}
-
-func (i *item) getInfo() (stow.Item, error) {
-	itemInfo, err := i.container.Item(i.ID())
-	if err != nil {
-		return nil, err
-	}
-	return itemInfo, nil
 }
 
 // OpenRange opens the item for reading starting at byte start and ending

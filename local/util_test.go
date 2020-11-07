@@ -102,7 +102,7 @@ func TestCreateItem(t *testing.T) {
 	is.NoErr(err)
 	is.OK(l)
 
-	containers, cursor, err := l.Containers("t", stow.CursorStart, 10)
+	containers, _, err := l.Containers("t", stow.CursorStart, 10)
 	is.NoErr(err)
 	is.OK(containers)
 	c1 := containers[0]
