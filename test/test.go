@@ -382,12 +382,6 @@ func acceptableTime(t *testing.T, is is.I, item1, item2 stow.Item) error {
 	return nil
 }
 
-func lastMod(is is.I, item stow.Item) time.Time {
-	lastMod, err := item.LastMod()
-	is.NoErr(err)
-	return lastMod
-}
-
 var letters = []rune("abcdefghijklmnopqrstuvwxyz")
 
 func init() {

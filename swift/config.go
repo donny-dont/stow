@@ -89,7 +89,7 @@ func newSwiftClient(cfg stow.Config) (*swift.Connection, error) {
 	}
 	err := client.Authenticate()
 	if err != nil {
-		return nil, errors.New("Unable to authenticate")
+		return nil, errors.New("unable to authenticate")
 	}
 	return &client, nil
 }

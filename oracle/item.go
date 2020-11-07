@@ -15,10 +15,8 @@ type item struct {
 	id        string
 	container *container
 	client    *swift.Connection
-	//properties az.BlobProperties
 	hash         string
 	size         int64
-	url          url.URL
 	lastModified time.Time
 	metadata     map[string]interface{}
 	infoOnce     sync.Once

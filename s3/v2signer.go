@@ -41,12 +41,6 @@ import (
 	"github.com/aws/aws-sdk-go/service/s3"
 )
 
-const (
-	signatureVersion = "2"
-	signatureMethod  = "HmacSHA1"
-	timeFormat       = "2006-01-02T15:04:05Z"
-)
-
 type signer struct {
 	// Values that must be populated from the request
 	Request     *http.Request

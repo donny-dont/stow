@@ -30,7 +30,7 @@ func TestChunkSize(t *testing.T) {
 	is.Equal(sz, maxChunkSize)
 
 	// Add one byte, we shouldn't be able to upload this
-	sz, err = determineChunkSize(maxParts*maxChunkSize + 1)
+	_, err = determineChunkSize(maxParts*maxChunkSize + 1)
 	is.Err(err)
 	is.Equal(err, errMultiPartUploadTooBig)
 }

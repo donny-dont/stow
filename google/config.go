@@ -9,6 +9,7 @@ import (
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
+	"google.golang.org/api/option"
 	storage "google.golang.org/api/storage/v1"
 
 	"github.com/graymeta/stow"
@@ -94,7 +95,7 @@ func newGoogleStorageClient(config stow.Config) (*storage.Service, error) {
 		}
 		httpClient = oauth2.NewClient(context.Background(), creds.TokenSource)
 	}
-	service, err := storage.New(httpClient)
+	service, err := storage.NewService(context.Background(), option.WithHTTPClient(httpClient))
 	if err != nil {
 		return nil, err
 	}
