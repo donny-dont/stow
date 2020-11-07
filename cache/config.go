@@ -11,11 +11,14 @@ import (
 const Kind = "cache"
 
 const (
-	// ConfigOverlayType is the Location type for the overlay.
+	// ConfigOverlayKind is the Location type for the overlay.
 	ConfigOverlayKind = "overlay_type"
-	ConfigOverlay     = "overlay"
-	ConfigBaseKind    = "base_type"
-	ConfigBase        = "base"
+	// ConfigOverlay is the configuration of the overlay.
+	ConfigOverlay = "overlay"
+	// ConfigBaseKind is the Location type for the base.
+	ConfigBaseKind = "base_type"
+	// ConfigBase is the configuration of the base.
+	ConfigBase = "base"
 )
 
 func init() {
